@@ -5,204 +5,138 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DevilNW | Resmi Site</title>
     <style>
-        * { box-sizing: border-box; }
+        /* GENEL AYARLAR */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
-            margin: 0;
-            font-family: 'Segoe UI', Arial, sans-serif;
+            font-family: 'Segoe UI', sans-serif;
             background: #0e0f13;
             color: #fff;
         }
 
         /* NAVBAR */
         nav {
-            background: rgba(20, 20, 25, .9);
-            backdrop-filter: blur(8px);
-            padding: 14px 30px;
+            background: rgba(20, 20, 25, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 15px 50px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            border-bottom: 1px solid #1c1e26;
         }
+        .nav-logo { font-weight: bold; font-size: 22px; color: #ff3b3b; }
+        .menu a { color: #cfd3ff; text-decoration: none; margin-left: 20px; font-weight: 500; transition: 0.3s; }
+        .menu a:hover { color: #ff3b3b; }
 
-        nav .logo-text {
-            font-weight: bold;
-            font-size: 20px;
-            color: #ff3b3b;
-        }
-
-        nav .menu a {
-            color: #cfd3ff;
-            text-decoration: none;
-            margin: 0 12px;
-            font-weight: 500;
-            transition: 0.3s;
-        }
-
-        nav .menu a:hover {
-            color: #ff3b3b;
-        }
-
-        /* HERO SECTION */
+        /* HERO ALANI */
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .9)),
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), 
                         url("https://images.unsplash.com/photo-1627856014754-2907e235fa4d");
             background-size: cover;
             background-position: center;
-            padding: 100px 20px;
+            padding: 120px 20px;
             text-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
-        /* LOGO DÜZENLEMESİ */
+        /* LOGO - KESİN ÇÖZÜM */
         .hero img {
-            width: 100%;            /* Mobil uyum için */
-            max-width: 280px;       /* Logonun maksimum genişliği */
-            height: auto;           /* Oran bozulmasın */
+            width: 280px; /* Logonun büyüklüğü */
+            height: auto;
             margin-bottom: 20px;
-            filter: drop-shadow(0 0 25px rgba(255, 0, 0, 0.6));
-            object-fit: contain;
+            filter: drop-shadow(0 0 20px rgba(255, 0, 0, 0.5));
+            /* Eğer dosya yoksa kırık simge yerine metin gösterir */
         }
 
-        .hero h1 {
-            margin: 10px 0 5px;
-            color: #ff3b3b;
-            letter-spacing: 3px;
-            font-size: 36px;
-        }
+        .hero h1 { font-size: 45px; color: #ff3b3b; letter-spacing: 4px; margin-bottom: 10px; }
 
-        .hero .ip {
-            margin-top: 15px;
-            font-size: 18px;
+        .ip-box {
             background: #161821;
-            display: inline-block;
             padding: 10px 25px;
             border-radius: 30px;
+            font-size: 18px;
             border: 1px solid #333;
+            margin-bottom: 30px;
         }
+        .ip-box b { color: #ff3b3b; }
 
-        /* BUTTONS */
-.buttons {
-    margin-top: 30px;
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-    flex-wrap: wrap; /* mobilde alt alta düşsün */
-}
-
+        /* BUTONLAR YAN YANA */
+        .button-group {
+            display: flex;       /* Yan yana getiren komut */
+            gap: 15px;          /* Aralarındaki boşluk */
+            justify-content: center;
+            flex-wrap: wrap;    /* Mobilde sığmazsa aşağı kayar */
         }
 
         .btn {
-            display: inline-block;
-            padding: 14px 28px;
-            border-radius: 10px;
             text-decoration: none;
-            margin: 8px;
-            font-weight: 600;
-            transition: transform 0.2s;
-        }
-
-        .btn:hover {
-            transform: translateY(-3px);
-        }
-
-        .btn.red { background: #ff3b3b; color: #fff; }
-        .btn.blue { background: #5865F2; color: #fff; }
-
-        /* CONTENT */
-        .container {
-            max-width: 1100px;
-            margin: auto;
-            padding: 60px 20px;
-        }
-
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
-        }
-
-        .card {
-            background: #161821;
-            border-radius: 14px;
-            padding: 25px;
-            border-bottom: 3px solid transparent;
+            padding: 14px 30px;
+            border-radius: 10px;
+            font-weight: 700;
             transition: 0.3s;
+            min-width: 180px;
         }
+        .btn-store { background: #ff3b3b; color: #fff; }
+        .btn-discord { background: #5865F2; color: #fff; }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
 
-        .card:hover {
-            border-bottom: 3px solid #ff3b3b;
-            transform: translateY(-5px);
-        }
+        /* HABERLER */
+        .container { max-width: 1100px; margin: auto; padding: 60px 20px; }
+        .news-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .card { background: #161821; padding: 25px; border-radius: 15px; border-bottom: 3px solid #ff3b3b; }
+        .card h3 { color: #ff3b3b; margin-bottom: 10px; }
 
-        .card h3 {
-            margin-top: 0;
-            color: #ff3b3b;
-        }
-
-        /* FOOTER */
-        footer {
-            text-align: center;
-            padding: 40px;
-            opacity: .6;
-            font-size: 14px;
-            border-top: 1px solid #1c1e26;
-        }
+        footer { text-align: center; padding: 40px; opacity: 0.5; font-size: 14px; }
     </style>
 </head>
 <body>
 
 <nav>
-    <div class="logo-text">DEVILNW</div>
+    <div class="nav-logo">DEVILNW</div>
     <div class="menu">
         <a href="#">Ana Sayfa</a>
         <a href="#">Mağaza</a>
-        <a href="#">Kredi Yükle</a>
         <a href="#">Yardım</a>
         <a href="#">Kurallar</a>
     </div>
 </nav>
 
 <section class="hero">
-       <img src="logo.png" alt="DevilNW Logo">
-    
+    <img src="logo.png" alt="DevilNW Logo" onerror="this.style.display='none'">
+
     <h1>DEVILNW</h1>
-    <img 
+    
+    <div class="ip-box">
+        IP: <b>DevilNW.aternos.me</b>
+    </div>
 
-
-    <div class="buttons">
-        <a class="btn red" href="#">Mağazaya Git</a>
-        <a class="btn blue" href="https://discord.gg/G8RcrAjuRF" target="_blank">Discorda Katıl</a>
+    <div class="button-group">
+        <a href="#" class="btn btn-store">Mağazaya Git</a>
+        <a href="https://discord.gg/G8RcrAjuRF" target="_blank" class="btn btn-discord">Discorda Katıl</a>
     </div>
 </section>
 
-<section class="container">
-    <h2>📰 Haberler</h2>
-
-    <div class="cards">
+<div class="container">
+    <h2 style="margin-bottom: 25px;">📰 Son Haberler</h2>
+    <div class="news-grid">
         <div class="card">
             <h3>Sunucu Açıldı!</h3>
-            <p>DevilNW resmi olarak yayında. Hepiniz hoş geldiniz.</p>
+            <p>Efsane geri döndü! DevilNW şimdi aktif. İyi oyunlar dileriz.</p>
         </div>
-
         <div class="card">
-            <h3>VIP Sistemi</h3>
-            <p>VIP, MVIP, MVIP+, TVIP paketleri mağazamızda aktif hale getirildi.</p>
+            <h3>VIP İndirimi</h3>
+            <p>Tüm kredi yüklemelerinde %25 bonus şansı mağazada sizi bekliyor.</p>
         </div>
-
         <div class="card">
-            <h3>Discord Aktif</h3>
-            <p>Çekilişler, destek talepleri ve duyurular için Discord sunucumuza katılmayı unutmayın.</p>
+            <h3>Discord Etkinliği</h3>
+            <p>Discord sunucumuzda her hafta çekilişler yapılmaktadır.</p>
         </div>
     </div>
-</section>
+</div>
 
 <footer>
-    © 2024 DevilNW • Tüm Hakları Saklıdır
+    © DevilNW Network • 2024 Tüm Hakları Saklıdır.
 </footer>
 
 </body>
