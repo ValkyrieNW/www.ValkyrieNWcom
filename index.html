@@ -4,83 +4,108 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>DevilNW | Minecraft VIP</title>
+
 <style>
 body{
-margin:0;
-font-family:Arial;
-background:#0b0b0b;
-color:#fff;
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#0b0b0b;
+    color:#fff;
 }
+
 header{
-background:#7f0000;
-padding:20px;
-text-align:center;
+    background:#7f0000;
+    padding:25px;
+    text-align:center;
 }
+
+header img{
+    width:120px;
+    margin-bottom:10px;
+}
+
 header h1{
-margin:0;
-color:#ff2e2e;
-font-size:32px;
+    margin:0;
+    color:#ff2e2e;
+    font-size:34px;
 }
+
+header p{
+    margin:5px 0 0;
+    opacity:.8;
+}
+
 main{
-padding:20px;
-max-width:900px;
-margin:auto;
+    padding:30px;
+    max-width:900px;
+    margin:auto;
 }
-.card{
-background:#141414;
-border-radius:12px;
-padding:16px;
-margin-bottom:15px;
+
+.menu{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
 }
-.card h2{
-margin:0;
-color:#ff4c4c;
+
+.box{
+    background:#141414;
+    border-radius:16px;
+    padding:40px 20px;
+    text-align:center;
+    cursor:pointer;
+    transition:.25s;
+    border:2px solid transparent;
 }
-.price{
-font-size:20px;
-margin:10px 0;
+
+.box:hover{
+    border-color:#ff2e2e;
+    transform:scale(1.03);
 }
-button{
-width:100%;
-padding:12px;
-border:none;
-border-radius:10px;
-background:#ff2e2e;
-color:white;
-font-size:16px;
+
+.box h2{
+    margin:0;
+    font-size:26px;
+    color:#ff4c4c;
 }
+
+.box p{
+    margin-top:10px;
+    opacity:.8;
+}
+
 footer{
-text-align:center;
-opacity:.6;
-padding:20px;
+    text-align:center;
+    opacity:.6;
+    padding:20px;
+    font-size:14px;
 }
 </style>
 </head>
+
 <body>
 
 <header>
-<h1>DEVILNW</h1>
-<p>Minecraft VIP Satış Sitesi</p>
+    <img src="logo.png" alt="DevilNW Logo">
+    <h1>DEVILNW</h1>
+    <p>Minecraft Satış Sitesi</p>
 </header>
 
 <main>
-<div class="card">
-<h2>VIP</h2>
-<p>Standart VIP paketi</p>
-<div class="price">50₺</div>
-<button onclick="window.location.href='https://discord.gg/'">Satın Al</button>
-</div>
+    <div class="menu">
+        <div class="box" onclick="window.location.href='vip.html'">
+            <h2>VIP’ler</h2>
+            <p>Sunucu VIP paketlerini görüntüle</p>
+        </div>
 
-<div class="card">
-<h2>VIP+</h2>
-<p>Gelişmiş VIP paketi</p>
-<div class="price">100₺</div>
-<button onclick="window.location.href='https://discord.gg/'">Satın Al</button>
-</div>
+        <div class="box" onclick="window.location.href='esyalar.html'">
+            <h2>Diğer Eşyalar</h2>
+            <p>Kasa anahtarı, item ve özel ürünler</p>
+        </div>
+    </div>
 </main>
 
 <footer>
-© DevilNW
+    © DevilNW
 </footer>
 
 </body>
