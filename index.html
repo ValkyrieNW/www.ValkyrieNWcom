@@ -7,106 +7,186 @@
     <style>
         /* GENEL AYARLAR */
         * { box-sizing: border-box; margin: 0; padding: 0; }
+        
         body {
-            font-family: 'Segoe UI', sans-serif;
-            background: #0e0f13;
-            color: #fff;
+            font-family: 'Poppins', 'Segoe UI', sans-serif;
+            /* Koyu Siyah - Kırmızı Geçişli Arka Plan */
+            background: radial-gradient(circle at top, #1a0505 0%, #0a0a0c 100%);
+            color: #ececec;
             overflow-x: hidden;
+            line-height: 1.6;
         }
 
-        /* NAVBAR */
+        /* NAVBAR - Cam Efekti Geliştirildi */
         nav {
-            background: rgba(20, 20, 25, 0.9);
-            backdrop-filter: blur(10px);
-            padding: 15px 50px;
+            background: rgba(10, 10, 12, 0.85);
+            backdrop-filter: blur(12px);
+            padding: 20px 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid #1c1e26;
+            border-bottom: 2px solid rgba(255, 59, 59, 0.2);
             position: sticky;
             top: 0;
             z-index: 1000;
         }
-        .nav-logo { font-weight: bold; font-size: 22px; color: #ff3b3b; text-decoration: none; letter-spacing: 1px; }
-        .menu { display: flex; }
-        .menu a { color: #cfd3ff; text-decoration: none; margin-left: 20px; font-weight: 500; transition: 0.3s; }
-        .menu a:hover { color: #ff3b3b; }
+        
+        .nav-logo { 
+            font-weight: 800; 
+            font-size: 24px; 
+            color: #ff3b3b; 
+            text-decoration: none; 
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
 
-        /* HERO ALANI */
+        .menu { display: flex; align-items: center; }
+        .menu a { 
+            color: #eee; 
+            text-decoration: none; 
+            margin-left: 25px; 
+            font-weight: 600; 
+            font-size: 15px;
+            transition: 0.3s; 
+            text-transform: uppercase;
+        }
+        .menu a:hover { color: #ff3b3b; text-shadow: 0 0 10px rgba(255,59,59,0.5); }
+
+        /* HERO ALANI - Daha Derinlikli */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), 
-                        url("https://images.unsplash.com/photo-1627856014754-2907e235fa4d");
+            position: relative;
+            padding: 120px 20px;
+            text-align: center;
+            background: linear-gradient(rgba(10, 10, 12, 0.4), rgba(10, 10, 12, 0.9)),
+                        url('https://images.unsplash.com/photo-1614850523296-d8c1af93d400?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
             background-position: center;
-            padding: 100px 20px;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            border-bottom: 1px solid rgba(255, 59, 59, 0.1);
         }
 
         .hero img {
-            width: 250px;
-            height: auto;
-            margin-bottom: 20px;
-            filter: drop-shadow(0 0 20px rgba(255, 0, 0, 0.5));
+            width: 200px;
+            margin-bottom: 25px;
+            filter: drop-shadow(0 0 30px rgba(255, 59, 59, 0.6));
+            animation: float 4s ease-in-out infinite;
         }
 
-        .hero h1 { font-size: 50px; color: #ff3b3b; letter-spacing: 5px; margin-bottom: 15px; }
-
-        /* DURUM KUTUSU */
-        .ip-box {
-            background: #161821;
-            padding: 20px 40px;
-            border-radius: 15px;
-            border: 1px solid #333;
-            margin-bottom: 30px;
-            text-align: center;
-            min-width: 320px;
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
         }
-        .ip-box b { color: #ff3b3b; font-size: 22px; display: block; margin-bottom: 10px; }
-        .status-text { font-size: 18px; font-weight: bold; }
-        .online { color: #2ecc71; }
-        .offline { color: #e74c3c; }
 
-        /* BUTONLAR */
+        .hero h1 { 
+            font-size: 65px; 
+            color: #ff3b3b; 
+            letter-spacing: 8px; 
+            margin-bottom: 20px; 
+            font-weight: 900;
+            text-shadow: 0 5px 15px rgba(0,0,0,0.5);
+        }
+
+        /* BUTONLAR - Neon Efekti */
         .button-group {
             display: flex;
-            gap: 15px;
+            gap: 20px;
             justify-content: center;
             flex-wrap: wrap;
+            margin-top: 30px;
         }
+        
         .btn {
             text-decoration: none;
-            padding: 15px 35px;
-            border-radius: 10px;
+            padding: 16px 40px;
+            border-radius: 8px;
             font-weight: 700;
-            transition: 0.3s;
-            min-width: 180px;
-            display: inline-block;
+            transition: 0.4s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: none;
+            cursor: pointer;
         }
-        .btn-store { background: #ff3b3b; color: #fff; }
-        .btn-discord { background: #5865F2; color: #fff; }
-        .btn:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.4); }
+        
+        .btn-store { 
+            background: #ff3b3b; 
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(255, 59, 59, 0.3);
+        }
+        
+        .btn-discord { 
+            background: transparent; 
+            color: #fff; 
+            border: 2px solid #5865F2;
+        }
 
-        /* HABERLER */
-        .container { max-width: 1100px; margin: auto; padding: 60px 20px; }
-        .news-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .btn:hover { 
+            transform: translateY(-5px); 
+            box-shadow: 0 10px 25px rgba(255, 59, 59, 0.4);
+        }
+
+        .btn-discord:hover {
+            background: #5865F2;
+        }
+
+        /* HABERLER SEKSIYONU */
+        .container { max-width: 1200px; margin: auto; padding: 80px 20px; }
+        
+        .section-title {
+            font-size: 32px;
+            margin-bottom: 40px;
+            border-left: 5px solid #ff3b3b;
+            padding-left: 15px;
+            text-transform: uppercase;
+        }
+
+        .news-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+            gap: 25px; 
+        }
+
         .card { 
-            background: #161821; 
-            padding: 25px; 
-            border-radius: 15px; 
-            border-bottom: 4px solid #ff3b3b;
+            background: #14151a; 
+            padding: 30px; 
+            border-radius: 12px; 
+            border: 1px solid #222;
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
         }
-        .card h3 { color: #ff3b3b; margin-bottom: 12px; }
-        .card p { color: #cfd3ff; line-height: 1.5; }
 
-        footer { text-align: center; padding: 50px; opacity: 0.6; font-size: 14px; }
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 4px;
+            background: #ff3b3b;
+        }
+
+        .card:hover {
+            transform: scale(1.03);
+            border-color: #ff3b3b;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .card h3 { color: #ff3b3b; margin-bottom: 15px; font-size: 22px; }
+        .card p { color: #b0b3b8; line-height: 1.7; font-size: 15px; }
+
+        /* FOOTER */
+        footer { 
+            text-align: center; 
+            padding: 60px; 
+            background: #070708;
+            border-top: 1px solid #1c1e26;
+            color: #666;
+            font-size: 14px; 
+        }
+        
+        footer b { color: #ff3b3b; }
     </style>
 </head>
 <body>
 
 <nav>
+    <a href="#" class="nav-logo">DevilNW</a>
     <div class="menu">
         <a href="magaza.html">Mağaza</a>
         <a href="yardim.html">Yardım</a>
@@ -117,27 +197,38 @@
 <section class="hero">
     <img src="logo.png" alt="DevilNW Logo" onerror="this.style.display='none'">
     <h1>DEVILNW</h1>
-    
+    <p style="font-size: 18px; color: #cfd3ff; max-width: 600px; margin: 0 auto 30px auto;">
+        Karanlığın içindeki en güçlü topluluğa katıl. Adalet, rekabet ve eğlence burada birleşiyor.
+    </p>
 
     <div class="button-group">
-        <a href="magaza.html" class="btn btn-store">Mağazaya Git</a>
-        <a href="https://discord.gg/G8RcrAjuRF" target="_blank" class="btn btn-discord">Discorda Katıl</a>
+        <a href="magaza.html" class="btn btn-store">Mağazayı Keşfet</a>
+        <a href="https://discord.gg/G8RcrAjuRF" target="_blank" class="btn btn-discord">Discord Sunucumuz</a>
     </div>
 </section>
 
 <div class="container">
-    <h2 style="margin-bottom: 25px;">📰 Son Haberler</h2>
+    <h2 class="section-title">Son Haberler</h2>
     <div class="news-grid">
         <div class="card">
-            <h3>Sunucu Açıldı!</h3>
-            <p>Efsane geri döndü! DevilNW şimdi aktif. İyi oyunlar dileriz.</p>
+            <h3>Sunucu Aktif!</h3>
+            <p>Büyük açılış gerçekleşti. Yepyeni sistemler ve optimize edilmiş altyapı ile DevilNW dünyası seni bekliyor.</p>
         </div>
         <div class="card">
-            <h3>Discord Etkinliği</h3>
-            <p>Discord Sunucusuna arkadaşınızı Davet Edip Ödül Kazanabilirsiniz</p>
+            <h3>Ödüllü Davet Etkinliği</h3>
+            <p>Discord sunucumuza en çok arkadaşını davet eden 3 kişiye sürpriz VIP üyelik hediye ediyoruz!</p>
+        </div>
+        <div class="card">
+            <h3>Mağaza Güncellendi</h3>
+            <p>Yeni kostümler ve özel paketler mağaza bölümüne eklendi. Göz atmayı unutma!</p>
         </div>
     </div>
 </div>
 
 <footer>
-    © DevilNW • 2026 Tüm Hakları Saklıdır.
+    © 2026 <b>DevilNW</b>. Tüm Hakları Saklıdır. <br>
+    <small>Bu site bir oyun topluluğu projesidir.</small>
+</footer>
+
+</body>
+</html>
