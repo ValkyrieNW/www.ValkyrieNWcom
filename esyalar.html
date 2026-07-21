@@ -3,14 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ValkyrieNW | Eşyalar</title>
+<title>ValkyrieNW | Eşyalar & Kasalar</title>
 <link rel="icon" type="image/png" href="logo.png">
 <style>
 *{box-sizing:border-box}
 body{
     margin:0;
     font-family:Segoe UI, Arial;
-    /* Siyah ve Koyu Kırmızı Karışımı Arka Plan */
     background: radial-gradient(circle at center, #2b0505 0%, #0e0f13 100%);
     background-attachment: fixed;
     color:#fff;
@@ -49,11 +48,25 @@ h1{
     text-shadow: 0 0 15px rgba(255, 59, 59, 0.4);
 }
 
+/* UYARI KUTUSU */
+.alert-box{
+    max-width:800px;
+    margin:20px auto;
+    padding:15px 20px;
+    background:rgba(255, 59, 59, 0.1);
+    border:2px dashed #ff3b3b;
+    border-radius:12px;
+    text-align:center;
+    color:#ff3b3b;
+    font-weight:600;
+    font-size:15px;
+}
+
 /* KARTLAR */
 .item-container{
     max-width:1100px;
     margin:auto;
-    padding:40px 20px;
+    padding:20px 20px 40px;
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
     gap:25px;
@@ -67,6 +80,9 @@ h1{
     transition:.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     border: 1px solid rgba(255, 59, 59, 0.1);
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .item-card:hover{
@@ -105,74 +121,12 @@ h1{
     cursor:pointer;
     transition: .3s;
     border: none;
+    margin-top: auto;
 }
 
 .buy-btn:hover{
     background: #d32f2f;
     box-shadow: 0 0 20px rgba(255, 59, 59, 0.4);
-}
-
-/* POPUP */
-.popup{
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,.85);
-    display:none;
-    align-items:center;
-    justify-content:center;
-    z-index:2000;
-    backdrop-filter: blur(5px);
-}
-
-.popup-box{
-    background:#1c1e29;
-    padding:40px;
-    border-radius:20px;
-    text-align:center;
-    max-width:420px;
-    width:90%;
-    border: 1px solid #ff3b3b;
-}
-
-.popup-box h3{
-    color:#ff3b3b;
-    margin-top:0;
-    font-size: 24px;
-}
-
-.popup-box p{
-    color:#cfcfcf;
-    margin:20px 0 30px;
-    font-size: 16px;
-}
-
-.popup-buttons a{
-    display:inline-block;
-    margin:8px;
-    padding:14px 24px;
-    border-radius:10px;
-    text-decoration:none;
-    font-weight:600;
-    transition: .3s;
-}
-
-.discord{
-    background:#5865F2;
-    color:#fff;
-}
-
-.discord:hover{
-    background: #4752c4;
-}
-
-.close{
-    background:#333;
-    color:#fff;
-    cursor: pointer;
-}
-
-.close:hover{
-    background: #4752c4;
 }
 
 /* FOOTER */
@@ -196,60 +150,77 @@ footer{
     </div>
 </nav>
 
-<h1>🧰 Eşyalar</h1>
+<h1>⚔️ Eşyalar & Kasalar</h1>
+
+<div class="alert-box">
+    ⚠️ ÖNEMLİ: Lütfen sipariş verirken not kısmına Minecraft Oyuncu Adınızı (Nick) doğru girdiğinizden emin olun!
+</div>
 
 <div class="item-container">
 
+    <!-- Para -->
     <div class="item-card">
-        <h2>Para</h2>
-        <div class="desc">
-            Sunucuda En Pahalı Paradan 16 Tane<br>
-            Olarak Alırsın.
+        <div>
+            <h2>Para</h2>
+            <div class="price">14.99 TL</div>
+            <div class="desc">
+                Sunucuda En Pahalı Paradan 16 Tane Olarak Alırsın.
+            </div>
         </div>
-        <div class="price">14.99 TL</div>
-        <a class="buy-btn" onclick="openPopup()">Satın Al</a>
+        <a class="buy-btn" href="#" target="_blank">Satın Al</a>
     </div>
 
+    <!-- Anahtar Kasası -->
     <div class="item-card">
-        <h2>Anahtar Kasası</h2>
-        <div class="desc">
-            Anahtar Kasası<br>
-            Açma Anahtarı Alırsın
+        <div>
+            <h2>Anahtar Kasası</h2>
+            <div class="price">14.99 TL</div>
+            <div class="desc">
+                Anahtar Kasası<br>
+                Açma Anahtarı Alırsın
+            </div>
         </div>
-        <div class="price">14.99 TL</div>
-        <a class="buy-btn" onclick="openPopup()">Satın Al</a>
+        <a class="buy-btn" href="#" target="_blank">Satın Al</a>
     </div>
 
+    <!-- Kit Kasası -->
     <div class="item-card">
-        <h2>Kit Kasası</h2>
-        <div class="desc">
-            Kit Kasası<br>
-            Açma Anahtarı Alırsın
+        <div>
+            <h2>Kit Kasası</h2>
+            <div class="price">24.99 TL</div>
+            <div class="desc">
+                Kit Kasası<br>
+                Açma Anahtarı Alırsın
+            </div>
         </div>
-        <div class="price">24.99 TL</div>
-        <a class="buy-btn" onclick="openPopup()">Satın Al</a>
+        <a class="buy-btn" href="#" target="_blank">Satın Al</a>
     </div>
 
+    <!-- Valkyrie Kasası -->
     <div class="item-card">
-        <h2>Valkyrie Kasası</h2>
-        <div class="desc">
-            Valkyrie Kasası<br>
-            Açma Anahtarı Alırsın
+        <div>
+            <h2>Valkyrie Kasası</h2>
+            <div class="price">49.99 TL</div>
+            <div class="desc">
+                Valkyrie Kasası<br>
+                Açma Anahtarı Alırsın
+            </div>
         </div>
-        <div class="price">49.99 TL</div>
-        <a class="buy-btn" onclick="openPopup()">Satın Al</a>
+        <a class="buy-btn" href="#" target="_blank">Satın Al</a>
     </div>
 
-    <!-- MIZRAK 1 EKLENDİ -->
+    <!-- Mızrak (Sadakat) -->
     <div class="item-card">
-        <h2>Mızrak (Sadakat)</h2>
-        <div class="desc">
-            • Keskinlik 60<br>
-            • Sadakat 3<br>
-            • Ölünce Kaybolur
+        <div>
+            <h2>Mızrak (Sadakat)</h2>
+            <div class="price">54.99 TL</div>
+            <div class="desc">
+                • Keskinlik 60<br>
+                • Sadakat 3<br>
+                • Ölünce Kaybolur
+            </div>
         </div>
-        <div class="price">54.99 TL</div>
-        <a class="buy-btn" onclick="openPopup()">Satın Al</a>
+        <a class="buy-btn" href="#" target="_blank">Satın Al</a>
     </div>
 
 </div>
@@ -257,34 +228,6 @@ footer{
 <footer>
     © ValkyrieNW • 2026 Tüm Hakları Saklıdır.
 </footer>
-
-<div class="popup" id="popup">
-    <div class="popup-box">
-        <h3>Satın Alma Bilgilendirmesi</h3>
-        <p>
-            Satın almak için Discord sunucumuzda<br>
-            <b>ticket açmanız gerekmektedir.</b>
-        </p>
-
-        <div class="popup-buttons">
-            <a href="https://discord.gg/valkyrienetwork"
-               target="_blank"
-               class="discord">
-               Discord’a Katıl
-            </a>
-            <a class="close" onclick="closePopup()">Kapat</a>
-        </div>
-    </div>
-</div>
-
-<script>
-function openPopup(){
-    document.getElementById("popup").style.display="flex";
-}
-function closePopup(){
-    document.getElementById("popup").style.display="none";
-}
-</script>
 
 </body>
 </html>
