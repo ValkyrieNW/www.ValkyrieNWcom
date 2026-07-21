@@ -1,390 +1,265 @@
 <!DOCTYPE html>
-
 <html lang="tr">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>ValkyrieNW | VIP Mağaza</title>
-
 <link rel="icon" type="image/png" href="logo.png">
-
 <style>
-
 *{box-sizing:border-box}
-
 body{
-
     margin:0;
-
     font-family:Segoe UI, Arial;
-
     background: radial-gradient(circle at top, #2b0000 0%, #0a0a0c 70%);
-
     color:#fff;
-
 }
-
-
 
 /* NAVBAR */
-
 nav{
-
     background:rgba(20,20,25,.95);
-
     padding:15px 30px;
-
     display:flex;
-
     justify-content:center;
-
     position:sticky;
-
     top:0;
-
     z-index:1000;
-
 }
-
-
 
 nav .menu a{
-
     color:#cfd3ff;
-
     text-decoration:none;
-
     margin:0 15px;
-
     font-weight:600;
-
     transition:.3s;
-
 }
-
-
 
 nav .menu a:hover{
-
     color:#ff3b3b;
-
 }
-
-
 
 /* BAŞLIK */
-
 h1{
-
     text-align:center;
-
     margin:40px 0 10px;
-
     color:#ff3b3b;
-
 }
 
-
+/* UYARI KUTUSU */
+.alert-box{
+    max-width:800px;
+    margin:20px auto;
+    padding:15px 20px;
+    background:rgba(255, 59, 59, 0.1);
+    border:2px dashed #ff3b3b;
+    border-radius:12px;
+    text-align:center;
+    color:#ff3b3b;
+    font-weight:600;
+    font-size:15px;
+}
 
 /* VIP KARTLARI */
-
 .vip-container{
-
     max-width:1100px;
-
     margin:auto;
-
     padding:40px 20px;
-
     display:grid;
-
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-
     gap:25px;
-
 }
-
-
 
 .vip-card{
-
     background:#161821;
-
     border-radius:16px;
-
     padding:25px;
-
     text-align:center;
-
     transition:.3s;
-
     border:2px solid transparent;
-
 }
-
-
 
 .vip-card:hover{
-
     transform:translateY(-8px);
-
     border-color:#ff3b3b;
-
 }
-
-
 
 .vip-card h2{
-
     margin-top:0;
-
     color:#ff3b3b;
-
 }
-
-
 
 .features{
-
     color:#b0b0b0;
-
     font-size:15px;
-
     line-height:1.8;
-
     margin:20px 0;
-
 }
-
-
 
 .buy-btn{
-
     display:inline-block;
-
     background:#ff3b3b;
-
     color:#fff;
-
     padding:12px 26px;
-
     border-radius:10px;
-
     text-decoration:none;
-
     font-weight:600;
-
     cursor:pointer;
-
     transition:.2s;
-
 }
-
-
 
 .buy-btn:hover{
-
     opacity:.85;
-
 }
-
-
 
 /* FOOTER */
-
 footer{
-
     text-align:center;
-
     padding:25px;
-
     color:#777;
-
     font-size:14px;
-
 }
-
 </style>
-
 </head>
-
 <body>
 
-
-
 <nav>
-
     <div class="menu">
-
         <a href="index.html">Ana Sayfa</a>
-
         <a href="magaza.html">Mağaza</a>
-
         <a href="yardim.html">Yardım</a>
-
         <a href="kurallar.html">Kurallar</a>
-
     </div>
-
 </nav>
-
-
 
 <h1>🛒 VIP Paketleri</h1>
 
-
+<div class="alert-box">
+    ⚠️ ÖNEMLİ: Lütfen sipariş verirken not kısmına Minecraft Oyuncu Adınızı (Nick) doğru girdiğinizden emin olun!
+</div>
 
 <div class="vip-container">
 
-
-
     <!-- VIP -->
-
     <div class="vip-card">
-
         <h2>VIP</h2>
-
         29.99 TL<br>
-
         <div class="features">
-
             • /pv 1 - /pv 8<br>
-
             • /warp vip<br>
-
             • Özel Rank<br>
-
             • 5 günde 1 VIP kiti
-
         </div>
-
         <a class="buy-btn" href="https://shopier.com/valkyriewe/49170736" target="_blank">Satın Al</a>
-
     </div>
-
-
 
     <!-- MVIP -->
-
     <div class="vip-card">
-
         <h2>MVIP</h2>
-
         49.99 TL<br>
-
         <div class="features">
-
             • /pv 1 - /pv 12<br>
-
             • /warp vip<br>
-
             • Özel Rank<br>
-
             • 5 günde 1 MVIP kiti
-
         </div>
-
         <a class="buy-btn" href="https://shopier.com/valkyriewe/49170960" target="_blank">Satın Al</a>
-
     </div>
-
-
 
     <!-- MVIP+ -->
-
     <div class="vip-card">
-
         <h2>MVIP+</h2>
-
         74.99 TL<br>
-
         <div class="features">
-
             • /pv 1 - /pv 16<br>
-
             • /warp vip<br>
-
             • Özel Rank<br>
-
             • 5 günde 1 MVIP+ kiti
-
         </div>
-
         <a class="buy-btn" href="https://www.shopier.com/valkyriewe/49171140" target="_blank">Satın Al</a>
-
     </div>
-
-
 
     <!-- Valkyrie Vip -->
-
     <div class="vip-card">
-
         <h2>Valkyrie Vip</h2>
-
         119.99 TL<br>
-
         <div class="features">
-
             • /pv 1 - /pv 20<br>
-
             • /warp vip<br>
-
             • Özel Rank<br>
-
             • 5 günde 1 Valkyrie Vip kiti
-
         </div>
-
         <a class="buy-btn" href="https://www.shopier.com/valkyriewe/49171291" target="_blank">Satın Al</a>
-
     </div>
-
-
 
     <!-- Sponsor -->
-
     <div class="vip-card">
-
         <h2>Sponsor</h2>
-
         199.99 TL<br>
-
         <div class="features">
-
             • /pv 1 - /pv 25<br>
-
             • /warp vip<br>
-
             • Özel Rank<br>
-
             • 5 günde 1 Sponsor kiti
-
         </div>
-
         <a class="buy-btn" href="https://www.shopier.com/valkyriewe/49171515" target="_blank">Satın Al</a>
-
     </div>
 
+    <!-- Para -->
+    <div class="vip-card">
+        <h2>Para</h2>
+        14.99 TL<br>
+        <div class="features">
+            Sunucuda En Pahalı Paradan 16 Tane Olarak Alırsın.
+        </div>
+        <a class="buy-btn" href="#" target="_blank">Satın Al</a>
+    </div>
 
+    <!-- Anahtar Kasası -->
+    <div class="vip-card">
+        <h2>Anahtar Kasası</h2>
+        14.99 TL<br>
+        <div class="features">
+            Anahtar Kasası<br>Açma Anahtarı Alırsın
+        </div>
+        <a class="buy-btn" href="#" target="_blank">Satın Al</a>
+    </div>
+
+    <!-- Kit Kasası -->
+    <div class="vip-card">
+        <h2>Kit Kasası</h2>
+        24.99 TL<br>
+        <div class="features">
+            Kit Kasası<br>Açma Anahtarı Alırsın
+        </div>
+        <a class="buy-btn" href="#" target="_blank">Satın Al</a>
+    </div>
+
+    <!-- Valkyrie Kasası -->
+    <div class="vip-card">
+        <h2>Valkyrie Kasası</h2>
+        49.99 TL<br>
+        <div class="features">
+            Valkyrie Kasası<br>Açma Anahtarı Alırsın
+        </div>
+        <a class="buy-btn" href="#" target="_blank">Satın Al</a>
+    </div>
+
+    <!-- Mızrak (Sadakat) -->
+    <div class="vip-card">
+        <h2>Mızrak (Sadakat)</h2>
+        54.99 TL<br>
+        <div class="features">
+            • Keskinlik 60<br>
+            • Sadakat 3<br>
+            • Ölünce Kaybolur
+        </div>
+        <a class="buy-btn" href="#" target="_blank">Satın Al</a>
+    </div>
 
 </div>
 
-
-
 <footer>
-
     © ValkyrieNW • 2026 Tüm Hakları Saklıdır.
-
 </footer>
 
-
-
 </body>
-
-</html> 
-
+</html>
