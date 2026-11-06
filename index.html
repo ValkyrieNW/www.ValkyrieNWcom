@@ -3,233 +3,471 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ValkyrieNW | Resmi Site</title>
-    <link rel="icon" type="image/png" href="logo.png">
+    <title>ValkyrieNW - Mağaza & Özel Sipariş</title>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        /* GENEL AYARLAR */
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        
-        body {
-            font-family: 'Poppins', 'Segoe UI', sans-serif;
-            /* Koyu Siyah - Kırmızı Geçişli Arka Plan */
-            background: radial-gradient(circle at top, #1a0505 0%, #0a0a0c 100%);
-            color: #ececec;
-            overflow-x: hidden;
-            line-height: 1.6;
+        :root {
+            --bg-dark: #0a0a0c;
+            --card-bg: #13131a;
+            --card-border: #22222e;
+            --accent-purple: #8b5cf6;
+            --accent-glow: rgba(139, 92, 246, 0.35);
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
         }
 
-        /* NAVBAR - Cam Efekti Geliştirildi */
-        nav {
-            background: rgba(10, 10, 12, 0.85);
-            backdrop-filter: blur(12px);
-            padding: 20px 8%;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Top Navigation Header */
+        header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 2px solid rgba(255, 59, 59, 0.2);
+            padding: 1.2rem 4rem;
+            background: rgba(10, 10, 12, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--card-border);
             position: sticky;
             top: 0;
-            z-index: 1000;
-        }
-        
-        .nav-logo { 
-            font-weight: 800; 
-            font-size: 24px; 
-            color: #ff3b3b; 
-            text-decoration: none; 
-            letter-spacing: 2px;
-            text-transform: uppercase;
+            z-index: 100;
         }
 
-        .menu { display: flex; align-items: center; }
-        .menu a { 
-            color: #eee; 
-            text-decoration: none; 
-            margin-left: 25px; 
-            font-weight: 600; 
-            font-size: 15px;
-            transition: 0.3s; 
-            text-transform: uppercase;
-        }
-        .menu a:hover { color: #ff3b3b; text-shadow: 0 0 10px rgba(255,59,59,0.5); }
-
-        /* HERO ALANI - Daha Derinlikli */
-        .hero {
-            position: relative;
-            padding: 120px 20px;
-            text-align: center;
-            background: linear-gradient(rgba(10, 10, 12, 0.4), rgba(10, 10, 12, 0.9)),
-                        url('https://images.unsplash.com/photo-1614850523296-d8c1af93d400?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            border-bottom: 1px solid rgba(255, 59, 59, 0.1);
-        }
-
-        .hero img {
-            width: 200px;
-            margin-bottom: 25px;
-            filter: drop-shadow(0 0 30px rgba(255, 59, 59, 0.6));
-            animation: float 4s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
-        }
-
-        .hero h1 { 
-            font-size: 65px; 
-            color: #ff3b3b; 
-            letter-spacing: 8px; 
-            margin-bottom: 20px; 
-            font-weight: 900;
-            text-shadow: 0 5px 15px rgba(0,0,0,0.5);
-        }
-
-        /* BUTONLAR - Neon Efekti */
-        .button-group {
+        .logo-container {
             display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 30px;
-        }
-        
-        .btn {
-            text-decoration: none;
-            padding: 16px 40px;
-            border-radius: 8px;
+            align-items: center;
+            gap: 12px;
             font-weight: 700;
-            transition: 0.4s;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border: none;
-            cursor: pointer;
-        }
-        
-        .btn-store { 
-            background: #ff3b3b; 
+            font-size: 1.3rem;
             color: #fff;
-            box-shadow: 0 4px 15px rgba(255, 59, 59, 0.3);
-        }
-        
-        .btn-discord { 
-            background: transparent; 
-            color: #fff; 
-            border: 2px solid #5865F2;
+            text-decoration: none;
         }
 
-        .btn:hover { 
-            transform: translateY(-5px); 
-            box-shadow: 0 10px 25px rgba(255, 59, 59, 0.4);
+        .logo-container img {
+            height: 36px;
+            border-radius: 6px;
+        }
+
+        nav {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        nav a:hover, nav a.active {
+            color: #fff;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .btn-discord {
+            background: #5865F2;
+            color: #fff;
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: opacity 0.2s;
         }
 
         .btn-discord:hover {
-            background: #5865F2;
+            opacity: 0.9;
         }
 
-        /* HABERLER SEKSIYONU */
-        .container { max-width: 1200px; margin: auto; padding: 80px 20px; }
-        
-        .section-title {
-            font-size: 32px;
-            margin-bottom: 40px;
-            border-left: 5px solid #ff3b3b;
-            padding-left: 15px;
-            text-transform: uppercase;
+        /* Container & Section Structure */
+        main {
+            flex: 1;
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
         }
 
-        .news-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
-            gap: 25px; 
+        .page-title {
+            text-align: center;
+            margin-bottom: 2.5rem;
         }
 
-        .card { 
-            background: #14151a; 
-            padding: 30px; 
-            border-radius: 12px; 
-            border: 1px solid #222;
-            transition: 0.3s;
+        .page-title h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .page-title p {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        /* Category Navigation Tabs */
+        .category-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .tab-btn {
+            background: #181824;
+            border: 1px solid var(--card-border);
+            color: var(--text-muted);
+            padding: 0.6rem 1.2rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+
+        .tab-btn:hover {
+            border-color: var(--accent-purple);
+            color: #fff;
+        }
+
+        .tab-btn.active {
+            background: #fff;
+            color: #000;
+            border-color: #fff;
+            font-weight: 600;
+        }
+
+        /* Grid Layout for Products & Services */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+
+        /* Card Component */
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+            cursor: pointer;
             position: relative;
             overflow: hidden;
         }
 
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 4px;
-            background: #ff3b3b;
-        }
-
         .card:hover {
-            transform: scale(1.03);
-            border-color: #ff3b3b;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            transform: translateY(-4px);
+            border-color: var(--accent-purple);
+            box-shadow: 0 10px 30px var(--accent-glow);
         }
 
-        .card h3 { color: #ff3b3b; margin-bottom: 15px; font-size: 22px; }
-        .card p { color: #b0b3b8; line-height: 1.7; font-size: 15px; }
-
-        /* FOOTER */
-        footer { 
-            text-align: center; 
-            padding: 60px; 
-            background: #070708;
-            border-top: 1px solid #1c1e26;
-            color: #666;
-            font-size: 14px; 
+        .card-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(139, 92, 246, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-purple);
+            margin-bottom: 1.2rem;
         }
-        
-        footer b { color: #ff3b3b; }
+
+        .card-tag {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.4rem;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        .card-desc {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .card-price {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .card-price.free {
+            color: #10b981;
+        }
+
+        .card-link {
+            font-size: 0.85rem;
+            color: var(--accent-purple);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-weight: 600;
+        }
+
+        /* Interactive Custom Order Section */
+        .custom-order-section {
+            margin-top: 5rem;
+            background: linear-gradient(180deg, rgba(139, 92, 246, 0.05) 0%, rgba(0,0,0,0) 100%);
+            border: 1px solid var(--card-border);
+            border-radius: 24px;
+            padding: 3rem 2rem;
+        }
+
+        .step-tracker {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .step-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .step-number {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--card-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+
+        .step-item.active .step-number {
+            background: #fff;
+            color: #000;
+        }
+
+        .step-item.active {
+            color: #fff;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--card-border);
+            font-size: 0.85rem;
+        }
     </style>
 </head>
 <body>
 
-<nav>
-    <a href="#" class="nav-logo">ValkyrieNW</a>
-    <div class="menu">
-        <a href="magaza.html">Mağaza</a>
-        <a href="yardim.html">Yardım</a>
-        <a href="kurallar.html">Kurallar</a>
-    </div>
-</nav>
-
-<section class="hero">
-    <img src="logo.png" alt="DevilNW Logo" onerror="this.style.display='none'">
-    <h1>ValkyrieNetwork</h1>
-    <p style="font-size: 18px; color: #cfd3ff; max-width: 600px; margin: 0 auto 30px auto;">
-        İP : play.valkyrienw.com.tr
-    </p>
-
-    <div class="button-group">
-        <a href="magaza.html" class="btn btn-store">Mağazayı Keşfet</a>
-        <a href="https://discord.gg/valkyrienw" target="_blank" class="btn btn-discord">Discord Sunucumuz</a>
-    </div>
-</section>
-
-<div class="container">
-    <h2 class="section-title">Son Haberler</h2>
-    <div class="news-grid">
-        <div class="card">
-            <h3>Sunucu Aktif!</h3>
-            <p>Büyük açılış gerçekleşti. Yepyeni sistemler ve optimize edilmiş altyapı ile ValkyrieNW dünyası seni bekliyor.</p>
+    <!-- Header / Navbar -->
+    <header>
+        <a href="index.html" class="logo-container">
+            <img src="logo.png" alt="ValkyrieNW Logo" onerror="this.style.display='none'">
+            <span>ValkyrieNW</span>
+        </a>
+        <nav>
+            <a href="index.html" class="active"><i data-lucide="shopping-bag"></i> Mağaza</a>
+            <a href="#custom-order"><i data-lucide="wrench"></i> Özel Sipariş</a>
+            <a href="kurallar.html"><i data-lucide="file-text"></i> Kurallar</a>
+            <a href="yardim.html"><i data-lucide="help-circle"></i> Destek</a>
+        </nav>
+        <div class="header-actions">
+            <a href="https://discord.gg/valkyrienw" target="_blank" class="btn-discord">
+                <i data-lucide="message-square"></i> Discord Katıl
+            </a>
         </div>
-        <div class="card">
-            <h3>Ödüllü Davet Etkinliği</h3>
-            <p>Discord sunucumuza aktif 3 kişiyi Davet Edene VIP üyelik hediye ediyoruz!</p>
-        </div>
-        <div class="card">
-            <h3>Mağaza Güncellendi</h3>
-            <p>Yeni Vip ve özel paketler mağaza bölümüne eklendi. Göz atmayı unutma!</p>
-        </div>
-    </div>
-</div>
+    </header>
 
-<footer>
-    © 2026 <b>ValkyrieNW</b>. Tüm Hakları Saklıdır. <br>
-    <small>Bu site bir oyun topluluğu projesidir.</small>
-</footer>
+    <main>
+        <!-- Title & Subtitle -->
+        <section class="page-title">
+            <h1>Geliştirici Mağazası</h1>
+            <p>Minecraft eklentileri, Discord otomasyonları, hazır haritalar ve özel yazılımlar.</p>
+        </section>
 
+        <!-- Category Tabs -->
+        <div class="category-tabs">
+            <button class="tab-btn active" onclick="filterCategory('all')">Tümü</button>
+            <button class="tab-btn" onclick="filterCategory('minecraft')">Minecraft</button>
+            <button class="tab-btn" onclick="filterCategory('discord')">Discord</button>
+            <button class="tab-btn" onclick="filterCategory('map')">Harita</button>
+            <button class="tab-btn" onclick="filterCategory('free')">Ücretsiz</button>
+        </div>
+
+        <!-- Product Cards Grid -->
+        <div class="grid-container" id="product-grid">
+
+            <!-- Item 1: Minecraft Plugin -->
+            <div class="card" data-category="minecraft">
+                <div class="card-icon"><i data-lucide="box"></i></div>
+                <div class="card-tag">Plugin</div>
+                <div class="card-title">Gelişmiş BoxPvP Eklentisi</div>
+                <div class="card-desc">Paper/Purpur 1.20+ uyumlu, optimize maden ve arena yönetim sistemi.</div>
+                <div class="card-footer">
+                    <div class="card-price">₺250</div>
+                    <a href="https://discord.gg/valkyrienw" target="_blank" class="card-link">İncele &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Item 2: Free Discord Bot -->
+            <div class="card" data-category="discord free">
+                <div class="card-icon"><i data-lucide="bot"></i></div>
+                <div class="card-tag">Discord Bot</div>
+                <div class="card-title">Minecraft Sunucu Bağlantı Botu</div>
+                <div class="card-desc">Sunucunuzdaki anlık oyuncu sayısını ve moderasyon loglarını gösterir.</div>
+                <div class="card-footer">
+                    <div class="card-price free">Ücretsiz</div>
+                    <a href="https://discord.gg/valkyrienw" target="_blank" class="card-link">İndir &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Item 3: Plugin Pack -->
+            <div class="card" data-category="minecraft">
+                <div class="card-icon"><i data-lucide="layers"></i></div>
+                <div class="card-tag">Plugin Paketi</div>
+                <div class="card-title">Full Lobi / Hub Paketi</div>
+                <div class="card-desc">Sıfır kasma, yüksek performanslı hazır lobi kurulum paketi.</div>
+                <div class="card-footer">
+                    <div class="card-price">₺400</div>
+                    <a href="https://discord.gg/valkyrienw" target="_blank" class="card-link">İncele &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Item 4: Map -->
+            <div class="card" data-category="map free">
+                <div class="card-icon"><i data-lucide="map-pin"></i></div>
+                <div class="card-tag">Harita</div>
+                <div class="card-title">Survival Spawn 300x300</div>
+                <div class="card-desc">Tüm sürümlere uyumlu, detaylı inşa edilmiş doğma alanı.</div>
+                <div class="card-footer">
+                    <div class="card-price free">Ücretsiz</div>
+                    <a href="https://discord.gg/valkyrienw" target="_blank" class="card-link">İndir &rarr;</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Custom Order Flow (LBDev Style) -->
+        <section class="custom-order-section" id="custom-order">
+            <div class="page-title">
+                <span style="color: var(--accent-purple); font-weight: bold; text-transform: uppercase; font-size: 0.8rem;">Özel Sipariş</span>
+                <h2>Ne yaptırmak istiyorsun?</h2>
+                <p>Alanı seç, hizmeti ve detayları yaz. Discord üzerinden hızlıca talep oluşturalım.</p>
+            </div>
+
+            <div class="step-tracker">
+                <div class="step-item active"><span class="step-number">1</span> Alan</div>
+                <div class="step-item"><span class="step-number">2</span> Hizmet</div>
+                <div class="step-item"><span class="step-number">3</span> Detay</div>
+                <div class="step-item"><span class="step-number">4</span> İletişim</div>
+            </div>
+
+            <div class="grid-container">
+                <div class="card" onclick="selectService('Minecraft')">
+                    <div class="card-icon"><i data-lucide="box"></i></div>
+                    <div class="card-title">Minecraft</div>
+                    <div class="card-desc">Konseptine göre plugin, harita ve sunucu paketleri.</div>
+                </div>
+
+                <div class="card" onclick="selectService('Discord Bot')">
+                    <div class="card-icon"><i data-lucide="bot"></i></div>
+                    <div class="card-title">Discord</div>
+                    <div class="card-desc">Özel Discord botu, ticket ve sunucu otomasyonları.</div>
+                </div>
+
+                <div class="card" onclick="selectService('Config / Ayar')">
+                    <div class="card-icon"><i data-lucide="file-code"></i></div>
+                    <div class="card-title">Config & Ayar</div>
+                    <div class="card-desc">Eklentilere özel optimizasyon ve Türkçe çeviri konfigürasyonları.</div>
+                </div>
+
+                <div class="card" onclick="selectService('Web & Panel')">
+                    <div class="card-icon"><i data-lucide="globe"></i></div>
+                    <div class="card-title">Website</div>
+                    <div class="card-desc">Mağaza, tanıtım ve geliştirici portföy web siteleri.</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2026 ValkyrieNW - Tüm Hakları Saklıdır.
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        // Dynamic Filtering
+        function filterCategory(cat) {
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            const cards = document.querySelectorAll('#product-grid .card');
+            cards.forEach(card => {
+                const categories = card.getAttribute('data-category');
+                if (cat === 'all' || categories.includes(cat)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Redirect to Discord ticket for custom orders
+        function selectService(type) {
+            window.open('https://discord.gg/valkyrienw', '_blank');
+        }
+    </script>
 </body>
 </html>
