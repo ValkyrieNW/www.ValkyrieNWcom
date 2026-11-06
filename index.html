@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ValkyrieNW - Mağaza & Geliştirici Hizmetleri</title>
+    <title>ValkyrieNW - Geliştirici Mağazası</title>
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
@@ -173,6 +173,8 @@
             transition: all 0.25s ease;
             position: relative;
             overflow: hidden;
+            text-decoration: none;
+            color: inherit;
         }
 
         .card:hover {
@@ -290,10 +292,11 @@
 
     <main>
         <section class="page-title">
-            <h1>Geliştirici Mağazası & Pluginler</h1>
-            <p>Yüksek performanslı Minecraft eklentileri ve özel yazılım çözümleri.</p>
+            <h1>Geliştirici Mağazası & Hizmetler</h1>
+            <p>Minecraft eklentileri, hazır haritalar ve özel yazılım çözümleri.</p>
         </section>
 
+        <!-- Kategori Filtreleri -->
         <div class="category-tabs">
             <button class="tab-btn active" onclick="filterCategory('all', this)">Tümü</button>
             <button class="tab-btn" onclick="filterCategory('minecraft', this)">Minecraft</button>
@@ -302,56 +305,36 @@
         </div>
 
         <div class="grid-container" id="product-grid">
-            <!-- Product 1: DUEL Plugin -->
-            <div class="card" data-category="minecraft">
-                <div class="card-icon"><i data-lucide="swords"></i></div>
-                <div class="card-tag">Plugin</div>
-                <div class="card-title">DUEL 1v1 ROOM Plugini</div>
-                <div class="card-desc">Oyuncuların kendi aralarında özel düello odaları kurup savaşabileceği gelişmiş sistem.</div>
-                <div class="card-footer">
-                    <div class="card-price">₺900,00</div>
-                    <a href="https://shopier.com/52582126" target="_blank" class="card-link">Satın Al &rarr;</a>
+            <!-- Tıklayınca yeni sayfaya (pluginler.html) giden plugin paketleri kartı -->
+            <a href="pluginler.html" class="card" data-category="minecraft">
+                <div>
+                    <div class="card-icon"><i data-lucide="box"></i></div>
+                    <div class="card-tag">Plugin Paketleri & Ücretli Eklentiler</div>
+                    <div class="card-title">ValkyrieSword & DUEL Pluginleri</div>
+                    <div class="card-desc">Özel kodlanmış sunucu eklentilerimiz ve premium paketlerimiz için tıklayın.</div>
                 </div>
-            </div>
-
-            <!-- Product 2: ValkyrieSword Plugin -->
-            <div class="card" data-category="minecraft">
-                <div class="card-icon"><i data-lucide="sparkles"></i></div>
-                <div class="card-tag">Plugin</div>
-                <div class="card-title">ValkyrieSword Özel Kılıç Plugini</div>
-                <div class="card-desc">Sunucunuza özel animasyonlu, yetenekli ve özelleştirilebilir özel kılıç eklentisi.</div>
-                <div class="card-footer">
-                    <div class="card-price">₺1.200,00</div>
-                    <a href="https://shopier.com/52582081" target="_blank" class="card-link">Satın Al &rarr;</a>
+                <div class="card-footer" style="width:100%;">
+                    <div class="card-price">İncele</div>
+                    <span class="card-link">Git &rarr;</span>
                 </div>
-            </div>
+            </a>
 
-            <!-- Product 3: Plugin Paketi -->
-            <div class="card" data-category="minecraft">
-                <div class="card-icon"><i data-lucide="box"></i></div>
-                <div class="card-tag">Plugin Paketi</div>
-                <div class="card-title">Gelişmiş ValkyrieNW Eklenti Paketi</div>
-                <div class="card-desc">Paper 1.21.4 uyumlu, yüksek performanslı hazır sunucu paketi.</div>
-                <div class="card-footer">
-                    <div class="card-price">₺250</div>
-                    <a href="https://discord.gg/hYsprG2c4w" target="_blank" class="card-link">İncele &rarr;</a>
-                </div>
-            </div>
-
-            <!-- Product 4: Free Map -->
+            <!-- Ücretsiz Harita Kartı -->
             <div class="card" data-category="harita free">
-                <div class="card-icon"><i data-lucide="map-pin"></i></div>
-                <div class="card-tag">Harita</div>
-                <div class="card-title">Lobi Map Paketi (300x300)</div>
-                <div class="card-desc">Minecraft sunucuları için optimize edilmiş ücretsiz lobi haritası.</div>
-                <div class="card-footer">
+                <div>
+                    <div class="card-icon"><i data-lucide="map-pin"></i></div>
+                    <div class="card-tag">Harita</div>
+                    <div class="card-title">Lobi Map Paketi (300x300)</div>
+                    <div class="card-desc">Minecraft sunucuları için optimize edilmiş ücretsiz lobi haritası.</div>
+                </div>
+                <div class="card-footer" style="width:100%;">
                     <div class="card-price free">Ücretsiz</div>
                     <a href="https://discord.gg/hYsprG2c4w" target="_blank" class="card-link">İndir &rarr;</a>
                 </div>
             </div>
         </div>
 
-        <!-- Custom Order Section (Clean Discord Redirect) -->
+        <!-- Özel Sipariş Alanı (Web / Bot kaldırıldı, sadece Discord yönlendirmesi var) -->
         <section class="custom-order-section" id="custom-order">
             <span style="color: var(--accent-purple); font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px;">ÖZEL SİPARİŞ</span>
             <h2 style="font-size: 2rem; font-weight: 800; margin-top: 0.4rem; margin-bottom: 0.8rem; color: #fff;">Özel bir eklenti veya sistem mi istiyorsun?</h2>
@@ -359,15 +342,19 @@
             
             <div class="grid-container" style="text-align: left;">
                 <div class="card clickable-card" onclick="openOrder()">
-                    <div class="card-icon"><i data-lucide="code-2"></i></div>
-                    <div class="card-title">Paper Eklenti Yazılımı</div>
-                    <div class="card-desc">İhtiyacınıza özel sıfırdan Java plugin geliştirmesi için Discord'a göz atın.</div>
+                    <div>
+                        <div class="card-icon"><i data-lucide="code-2"></i></div>
+                        <div class="card-title">Paper Eklenti Yazılımı</div>
+                        <div class="card-desc">İhtiyacınıza özel sıfırdan Java plugin geliştirmesi için Discord'a katılın.</div>
+                    </div>
                 </div>
 
                 <div class="card clickable-card" onclick="openOrder()">
-                    <div class="card-icon"><i data-lucide="file-code-2"></i></div>
-                    <div class="card-title">Config & Optimizasyon</div>
-                    <div class="card-desc">Mevcut eklentilerinizin ayarlanması ve performans optimizasyonu.</div>
+                    <div>
+                        <div class="card-icon"><i data-lucide="file-code-2"></i></div>
+                        <div class="card-title">Config & Optimizasyon</div>
+                        <div class="card-desc">Mevcut eklentilerinizin ayarlanması ve performans optimizasyonu.</div>
+                    </div>
                 </div>
             </div>
         </section>
