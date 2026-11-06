@@ -3,137 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kurallar | ValkyrieNW</title>
-    <link rel="icon" type="image/png" href="logo.png">
+    <title>ValkyrieNW - Hizmet & Kurallar</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        /* GENEL AYARLAR */
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        
-        /* Arka planı kırmızımsı siyah dairesel geçişli yaptık */
-        body { 
-            font-family: 'Segoe UI', sans-serif; 
-            background: radial-gradient(circle at center, #1a0505 0%, #0e0f13 100%);
-            background-attachment: fixed;
-            color: #fff; 
-            min-height: 100vh;
-        }
-        
-        nav {
-            background: rgba(15, 15, 20, 0.8);
-            backdrop-filter: blur(10px);
-            padding: 15px 50px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid rgba(255, 59, 59, 0.1);
-        }
-        .nav-logo { font-weight: bold; font-size: 22px; color: #ff3b3b; text-decoration: none; }
-        .menu a { color: #cfd3ff; text-decoration: none; margin-left: 20px; font-weight: 500; transition: 0.3s; }
-        .menu a:hover { color: #ff3b3b; }
-
-        .container { max-width: 900px; margin: auto; padding: 60px 20px; }
-        h1 { text-align: center; color: #ff3b3b; font-size: 45px; margin-bottom: 40px; letter-spacing: 2px; text-shadow: 0 0 20px rgba(255, 59, 59, 0.4); }
-        
-        .rules-section { 
-            background: rgba(22, 24, 33, 0.8); 
-            padding: 30px; 
-            border-radius: 15px; 
-            border-left: 5px solid #ff3b3b; 
-            margin-bottom: 30px;
-            backdrop-filter: blur(5px);
-            border-right: 1px solid rgba(255, 59, 59, 0.05);
-            border-top: 1px solid rgba(255, 59, 59, 0.05);
-            border-bottom: 1px solid rgba(255, 59, 59, 0.05);
-        }
-        
-        h2 { color: #ff3b3b; margin-bottom: 20px; border-bottom: 1px solid rgba(255, 59, 59, 0.2); padding-bottom: 10px; }
-        
-        .rules-list { list-style: none; }
-        .rules-list li { 
-            padding: 12px 0; 
-            border-bottom: 1px solid rgba(255,255,255,0.05); 
-            color: #cfd3ff;
-            display: flex;
-            gap: 10px;
-            transition: 0.2s;
-        }
-        .rules-list li:hover { color: #fff; padding-left: 5px; }
-        .rules-list li b { color: #ff3b3b; min-width: 30px; }
-
-        .note { 
-            background: rgba(255, 59, 59, 0.1); 
-            padding: 15px; 
-            border-radius: 8px; 
-            color: #ff4d4d; 
-            font-weight: bold; 
-            margin-top: 15px;
-            text-align: center;
-            border: 1px solid rgba(255, 59, 59, 0.2);
+        :root {
+            --bg-dark: #08080a;
+            --card-bg: #111118;
+            --card-border: #1f1f2e;
+            --accent-purple: #8b5cf6;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
         }
 
-        footer { text-align: center; padding: 40px; opacity: 0.5; font-size: 14px; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+        body { background-color: var(--bg-dark); color: var(--text-main); min-height: 100vh; display: flex; flex-direction: column; }
+
+        header {
+            display: flex; justify-content: space-between; align-items: center; padding: 1rem 3rem; background: rgba(8, 8, 10, 0.85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--card-border); position: sticky; top: 0; z-index: 100;
+        }
+
+        .logo-container { display: flex; align-items: center; gap: 12px; font-weight: 700; font-size: 1.25rem; color: #fff; text-decoration: none; }
+        .logo-container img { height: 38px; border-radius: 8px; }
+
+        nav { display: flex; gap: 1.8rem; align-items: center; }
+        nav a { color: var(--text-muted); text-decoration: none; font-size: 0.95rem; display: flex; align-items: center; gap: 6px; font-weight: 500; }
+        nav a:hover, nav a.active { color: #fff; }
+
+        .btn-discord { background: #5865F2; color: #fff; padding: 0.55rem 1.1rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.9rem; display: flex; align-items: center; gap: 8px; }
+
+        main { flex: 1; max-width: 900px; width: 100%; margin: 0 auto; padding: 3rem 1.5rem; }
+
+        .rules-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .rules-card h3 {
+            font-size: 1.25rem; color: #fff; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 10px;
+        }
+
+        .rules-card p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; }
+        footer { text-align: center; padding: 2rem; color: var(--text-muted); border-top: 1px solid var(--card-border); font-size: 0.85rem; }
     </style>
 </head>
 <body>
+    <header>
+        <a href="index.html" class="logo-container">
+            <img src="logo.png" alt="ValkyrieNW Logo" onerror="this.style.display='none'">
+            <span>ValkyrieNW</span>
+        </a>
+        <nav>
+            <a href="index.html"><i data-lucide="shopping-bag"></i> Mağaza</a>
+            <a href="index.html#custom-order"><i data-lucide="wrench"></i> Özel Sipariş</a>
+            <a href="kurallar.html" class="active"><i data-lucide="shield-check"></i> Kurallar</a>
+            <a href="yardim.html"><i data-lucide="help-circle"></i> Destek & SSS</a>
+        </nav>
+        <a href="https://discord.gg/valkyrienw" target="_blank" class="btn-discord"><i data-lucide="message-square"></i> Discord Katıl</a>
+    </header>
 
-<nav>
-    <a href="index.html" class="nav-logo">ValkyrieNW</a>
-    <div class="menu">
-        <a href="index.html">Ana Sayfa</a>
-        <a href="magaza.html">Mağaza</a>
-        <a href="yardim.html">Yardım</a>
-    </div>
-</nav>
-
-<div class="container">
-    <h1>ValkyrieNW Kurallar</h1>
-    
-    <div class="rules-section">
-        <h2>🎮 Oyun İçi Kurallar</h2>
-        <ul class="rules-list">
-            <li><b>1-)</b> Hile kullanmak yasaktır.</li>
-            <li><b>2-)</b> Hile kontrolünden kaçmak yasaktır.</li>
-            <li><b>3-)</b> Bilgisayarınızda hile bulundurmak yasaktır.</li>
-            <li><b>4-)</b> Her türlü reklam yapmak yasaktır.</li>
-            <li><b>5-)</b> Yetkililerin ismine benzer isimler kullanmak yasaktır.</li>
-            <li><b>6-)</b> Uygunsuz isim kullanmak yasaktır.</li>
-            <li><b>7-)</b> Küfür veya argo kelime kullanmak yasaktır.</li>
-            <li><b>8-)</b> Politik veya siyasi görüşler hakkında konuşmak yasaktır.</li>
-            <li><b>9-)</b> İllegal olan şeyler hakkında sohbet edilmesi yasaktır.</li>
-            <li><b>10-)</b> Sunucuda olan her türlü bug veya açık kullanımı yasaktır.</li>
-            <li><b>11-)</b> Yetkililerden gereğinden fazla gereksiz şeyler için rahatsız etmek yasaktır.</li>
-            <li><b>12-)</b> 5'den fazla hesap oluşturmak yasaktır.</li>
-            <li><b>13-)</b> Oyun hesabınızı satmak veya birine devretmek yasaktır.</li>
-            <li><b>14-)</b> Sunucuda olan bir eşyayı sunucudan bağımsız bir şey ile takas etmek veya satmak yasaktır. (Kredi ile takas serbesttir.)</li>
-        </ul>
-        <div class="note">
-            NOT: Yazan maddelerin ihlali halinde sunucudan geçici veya kalıcı olarak yasaklanabileceğinizi unutmayınız!
+    <main>
+        <div style="text-align: center; margin-bottom: 2.5rem;">
+            <h1 style="font-size: 2.2rem; font-weight: 800;">Hizmet ve Kullanım Şartları</h1>
+            <p style="color: var(--text-muted); margin-top: 0.4rem;">Topluluk ve ürün teslimat standartlarımız</p>
         </div>
-    </div>
 
-    <div class="rules-section">
-        <h2>💬 Discord Kuralları</h2>
-        <ul class="rules-list">
-            <li><b>1-)</b> Herhangi bir kanalı amacı dışı kullanmak yasaktır.</li>
-            <li><b>2-)</b> Her türlü reklam yapmak yasaktır.</li>
-            <li><b>3-)</b> Küfür veya argo kelime kullanmak yasaktır.</li>
-            <li><b>4-)</b> Her türlü uygunsuz içerik paylaşmak yasaktır.</li>
-            <li><b>5-)</b> Herhangi bir kanalda pack paylaşmak yasaktır.</li>
-            <li><b>6-)</b> Politik veya siyasi görüşler hakkında konuşmak yasaktır.</li>
-            <li><b>7-)</b> Başkalarının kişisel bilgilerini paylaşmak yasaktır.</li>
-            <li><b>8-)</b> İllegal olan şeyler hakkında sohbet edilmesi yasaktır.</li>
-            <li><b>9-)</b> Başkalarını rahatsız etmek yasaktır (özellikle ses kanallarında).</li>
-            <li><b>10-)</b> Türkiye'deki bilişim hukuku ve ilgili yasalar geçerlidir.</li>
-        </ul>
-        <div class="note">
-            NOT: Yazan maddelerin ihlali halinde sunucudan geçici veya kalıcı olarak yasaklanabileceğinizi unutmayınız!
+        <div class="rules-card">
+            <h3><i data-lucide="code-2" style="color: var(--accent-purple);"></i> 1. Eklenti ve Yazılım Kullanımı</h3>
+            <p>Paylaşılan veya satın alınan tüm eklentiler, botlar ve konfigürasyon dosyaları üçüncü şahıslarla izinsiz olarak yeniden satılamaz veya paylaşılamaz.</p>
         </div>
-    </div>
-</div>
 
-<footer>
-    © ValkyrieNW • 2026 Tüm Hakları Saklıdır.
-</footer>
+        <div class="rules-card">
+            <h3><i data-lucide="refresh-cw" style="color: var(--accent-purple);"></i> 2. İade ve Güncelleme Politikası</h3>
+            <p>Dijital teslim edilen yazılımlarda ve özel kodlanan projelerde teslimat sonrası iade bulunmamaktadır. Hatalar için ücretsiz teknik destek sağlanır.</p>
+        </div>
 
+        <div class="rules-card">
+            <h3><i data-lucide="message-square" style="color: var(--accent-purple);"></i> 3. Destek ve İletişim</h3>
+            <p>Tüm sipariş ve teknik destek talepleri resmi Discord sunucumuz üzerinden yürütülmektedir.</p>
+        </div>
+    </main>
+
+    <footer>&copy; 2026 ValkyrieNW - Tüm Hakları Saklıdır.</footer>
+    <script>lucide.createIcons();</script>
 </body>
 </html>
