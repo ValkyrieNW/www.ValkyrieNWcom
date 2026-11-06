@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ValkyrieNW - Geliştirici Mağazası</title>
+    <title>ValkyrieNW - Mağaza & Geliştirici Hizmetleri</title>
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
@@ -55,221 +55,51 @@
             text-decoration: none;
         }
 
-        .logo-container img {
-            height: 38px;
-            border-radius: 8px;
-        }
+        .logo-container img { height: 38px; border-radius: 8px; }
 
-        nav {
-            display: flex;
-            gap: 1.8rem;
-            align-items: center;
-        }
-
-        nav a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: color 0.2s;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            font-weight: 500;
-        }
-
-        nav a:hover, nav a.active {
-            color: #fff;
-        }
+        nav { display: flex; gap: 1.8rem; align-items: center; }
+        nav a { color: var(--text-muted); text-decoration: none; font-size: 0.95rem; display: flex; align-items: center; gap: 6px; font-weight: 500; }
+        nav a:hover, nav a.active { color: #fff; }
 
         .btn-discord {
-            background: #5865F2;
-            color: #fff;
-            padding: 0.55rem 1.1rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: opacity 0.2s;
+            background: #5865F2; color: #fff; padding: 0.55rem 1.1rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.9rem; display: flex; align-items: center; gap: 8px;
         }
 
-        .btn-discord:hover {
-            opacity: 0.9;
-        }
+        main { flex: 1; max-width: 1200px; width: 100%; margin: 0 auto; padding: 3rem 1.5rem; }
 
-        main {
-            flex: 1;
-            max-width: 1200px;
-            width: 100%;
-            margin: 0 auto;
-            padding: 3rem 1.5rem;
-        }
+        .page-title { text-align: center; margin-bottom: 2.5rem; }
+        .page-title h1 { font-size: 2.4rem; font-weight: 800; margin-bottom: 0.6rem; letter-spacing: -0.5px; }
+        .page-title p { color: var(--text-muted); font-size: 1rem; }
 
-        .page-title {
-            text-align: center;
-            margin-bottom: 2.5rem;
-        }
-
-        .page-title h1 {
-            font-size: 2.4rem;
-            font-weight: 800;
-            margin-bottom: 0.6rem;
-            letter-spacing: -0.5px;
-        }
-
-        .page-title p {
-            color: var(--text-muted);
-            font-size: 1rem;
-        }
-
-        .category-tabs {
-            display: flex;
-            justify-content: center;
-            gap: 0.6rem;
-            flex-wrap: wrap;
-            margin-bottom: 3rem;
-        }
+        .category-tabs { display: flex; justify-content: center; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 3rem; }
 
         .tab-btn {
-            background: #14141e;
-            border: 1px solid var(--card-border);
-            color: var(--text-muted);
-            padding: 0.6rem 1.3rem;
-            border-radius: 20px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            transition: all 0.2s;
-            font-weight: 500;
+            background: #14141e; border: 1px solid var(--card-border); color: var(--text-muted); padding: 0.6rem 1.3rem; border-radius: 20px; cursor: pointer; font-size: 0.9rem; transition: all 0.2s; font-weight: 500;
         }
+        .tab-btn:hover { border-color: var(--accent-purple); color: #fff; }
+        .tab-btn.active { background: #fff; color: #000; border-color: #fff; font-weight: 700; }
 
-        .tab-btn:hover {
-            border-color: var(--accent-purple);
-            color: #fff;
-        }
-
-        .tab-btn.active {
-            background: #fff;
-            color: #000;
-            border-color: #fff;
-            font-weight: 700;
-        }
-
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-            gap: 1.5rem;
-        }
+        .grid-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 1.5rem; }
 
         .card {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 16px;
-            padding: 1.5rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: all 0.25s ease;
-            position: relative;
-            overflow: hidden;
-            text-decoration: none;
-            color: inherit;
+            background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 16px; padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.25s ease; position: relative; overflow: hidden; text-decoration: none; color: inherit;
         }
+        .card:hover { transform: translateY(-4px); border-color: rgba(139, 92, 246, 0.6); box-shadow: 0 8px 25px var(--accent-glow); }
 
-        .card:hover {
-            transform: translateY(-4px);
-            border-color: rgba(139, 92, 246, 0.6);
-            box-shadow: 0 8px 25px var(--accent-glow);
-        }
+        .card-icon { width: 48px; height: 48px; background: rgba(139, 92, 246, 0.12); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--accent-purple); margin-bottom: 1.2rem; }
+        .card-tag { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.4rem; font-weight: 600; }
+        .card-title { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem; color: #fff; }
+        .card-desc { font-size: 0.88rem; color: var(--text-muted); line-height: 1.45; margin-bottom: 1.5rem; }
 
-        .card-icon {
-            width: 48px;
-            height: 48px;
-            background: rgba(139, 92, 246, 0.12);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--accent-purple);
-            margin-bottom: 1.2rem;
-        }
+        .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: auto; padding-top: 1rem; border-top: 1px solid rgba(255, 255, 255, 0.05); width: 100%; }
+        .card-price { font-size: 1.1rem; font-weight: 700; color: #fff; }
+        .card-price.free { color: #10b981; }
+        .card-link { font-size: 0.85rem; color: var(--accent-purple); text-decoration: none; display: flex; align-items: center; gap: 4px; font-weight: 600; }
 
-        .card-tag {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 0.4rem;
-            font-weight: 600;
-        }
+        .custom-order-section { margin-top: 5rem; background: linear-gradient(180deg, rgba(139, 92, 246, 0.06) 0%, rgba(8,8,10,0) 100%); border: 1px solid var(--card-border); border-radius: 24px; padding: 3rem 2rem; text-align: center; }
+        .clickable-card { cursor: pointer; text-align: left; }
 
-        .card-title {
-            font-size: 1.15rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            color: #fff;
-        }
-
-        .card-desc {
-            font-size: 0.88rem;
-            color: var(--text-muted);
-            line-height: 1.45;
-            margin-bottom: 1.5rem;
-        }
-
-        .card-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: auto;
-            padding-top: 1rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            width: 100%;
-        }
-
-        .card-price {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: #fff;
-        }
-
-        .card-price.free {
-            color: #10b981;
-        }
-
-        .card-link {
-            font-size: 0.85rem;
-            color: var(--accent-purple);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 4px;
-            font-weight: 600;
-        }
-
-        .custom-order-section {
-            margin-top: 5rem;
-            background: linear-gradient(180deg, rgba(139, 92, 246, 0.06) 0%, rgba(8,8,10,0) 100%);
-            border: 1px solid var(--card-border);
-            border-radius: 24px;
-            padding: 3rem 2rem;
-            text-align: center;
-        }
-
-        .clickable-card {
-            cursor: pointer;
-            text-align: left;
-        }
-
-        footer {
-            text-align: center;
-            padding: 2rem;
-            color: var(--text-muted);
-            border-top: 1px solid var(--card-border);
-            font-size: 0.85rem;
-            margin-top: 3rem;
-        }
+        footer { text-align: center; padding: 2rem; color: var(--text-muted); border-top: 1px solid var(--card-border); font-size: 0.85rem; margin-top: 3rem; }
     </style>
 </head>
 <body>
@@ -297,7 +127,7 @@
             <p>Minecraft eklentileri, hazır haritalar ve özel yazılım çözümleri.</p>
         </section>
 
-        <!-- Kategori Filtreleri -->
+        <!-- Kategori Filtreleri (Discord silindi) -->
         <div class="category-tabs">
             <button class="tab-btn active" onclick="filterCategory('all', this)">Tümü</button>
             <button class="tab-btn" onclick="filterCategory('minecraft', this)">Minecraft</button>
@@ -306,21 +136,21 @@
         </div>
 
         <div class="grid-container" id="product-grid">
-            <!-- Tıklayınca pluginler.html sayfasına giden kart -->
-            <a href="pluginler.html" class="card" data-category="minecraft">
+            <!-- 1. Plugin Paketi -> pluginpaketler.html sayfasına yönlendirir -->
+            <a href="pluginpaketler.html" class="card" data-category="minecraft">
                 <div>
                     <div class="card-icon"><i data-lucide="box"></i></div>
-                    <div class="card-tag">Plugin Paketleri & Ücretli Eklentiler</div>
-                    <div class="card-title">ValkyrieSword & DUEL Pluginleri</div>
-                    <div class="card-desc">Özel kodlanmış sunucu eklentilerimiz ve premium paketlerimiz için tıklayın.</div>
+                    <div class="card-tag">Plugin Paketi</div>
+                    <div class="card-title">Gelişmiş BoxPvP Eklenti Paketi</div>
+                    <div class="card-desc">Paper 1.20+ uyumlu, yüksek performanslı, özel maden ve rütbe sistemli hazır paket.</div>
                 </div>
                 <div class="card-footer">
-                    <div class="card-price">İncele</div>
-                    <span class="card-link">Git &rarr;</span>
+                    <div class="card-price">₺250</div>
+                    <span class="card-link">İncele &rarr;</span>
                 </div>
             </a>
 
-            <!-- Ücretsiz Harita Kartı -->
+            <!-- 2. Harita Kartı -->
             <div class="card" data-category="harita free">
                 <div>
                     <div class="card-icon"><i data-lucide="map-pin"></i></div>
@@ -333,28 +163,42 @@
                     <a href="https://discord.gg/hYsprG2c4w" target="_blank" class="card-link">İndir &rarr;</a>
                 </div>
             </div>
+
+            <!-- 3. Özel Plugin -> pluginler.html sayfasına yönlendirir -->
+            <a href="pluginler.html" class="card" data-category="minecraft">
+                <div>
+                    <div class="card-icon"><i data-lucide="code-2"></i></div>
+                    <div class="card-tag">Özel Plugin</div>
+                    <div class="card-title">Paper / Folia Özel Eklenti Yazımı</div>
+                    <div class="card-desc">Özel kodlanmış kılıç ve düello eklentilerimiz (ValkyrieSword, DUEL) için tıklayın.</div>
+                </div>
+                <div class="card-footer">
+                    <div class="card-price">₺900'den başlayan</div>
+                    <span class="card-link">İncele &rarr;</span>
+                </div>
+            </a>
         </div>
 
-        <!-- Özel Sipariş Alanı (Bot ve Website tamamen kaldırıldı) -->
+        <!-- Özel Sipariş Alanı (Sadece Minecraft & Config var) -->
         <section class="custom-order-section" id="custom-order">
             <span style="color: var(--accent-purple); font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px;">ÖZEL SİPARİŞ</span>
-            <h2 style="font-size: 2rem; font-weight: 800; margin-top: 0.4rem; margin-bottom: 0.8rem; color: #fff;">Özel bir eklenti veya sistem mi istiyorsun?</h2>
-            <p style="color: var(--text-muted); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">İstediğiniz eklenti, config veya sistem için Discord sunucumuza katılarak talep (ticket) oluşturabilirsiniz.</p>
+            <h2 style="font-size: 2rem; font-weight: 800; margin-top: 0.4rem; margin-bottom: 0.8rem; color: #fff;">Ne yaptırmak istiyorsun?</h2>
+            <p style="color: var(--text-muted); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">Alanı seç ve detayları belirle. Discord üzerinden doğrudan talep oluşturalım.</p>
             
             <div class="grid-container" style="text-align: left;">
                 <div class="card clickable-card" onclick="openOrder()">
                     <div>
-                        <div class="card-icon"><i data-lucide="code-2"></i></div>
-                        <div class="card-title">Paper Eklenti Yazılımı</div>
-                        <div class="card-desc">İhtiyacınıza özel sıfırdan Java plugin geliştirmesi için Discord'a katılın.</div>
+                        <div class="card-icon"><i data-lucide="box"></i></div>
+                        <div class="card-title">Minecraft</div>
+                        <div class="card-desc">Konseptinize göre özel eklenti, harita ve sunucu paketleri.</div>
                     </div>
                 </div>
 
                 <div class="card clickable-card" onclick="openOrder()">
                     <div>
                         <div class="card-icon"><i data-lucide="file-code-2"></i></div>
-                        <div class="card-title">Config & Optimizasyon</div>
-                        <div class="card-desc">Mevcut eklentilerinizin ayarlanması ve performans optimizasyonu.</div>
+                        <div class="card-title">Config & Ayar</div>
+                        <div class="card-desc">Eklenti optimizasyonu, Türkçe dil çevirileri ve veri tabanı ayarları.</div>
                     </div>
                 </div>
             </div>
